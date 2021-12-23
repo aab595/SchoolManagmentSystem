@@ -15,15 +15,15 @@ const studentSchema = new mongoose.Schema(
           },
         
         
-        Adress: {
+        adress: {
             type: String,
             
         },
-        Sexe: { 
+        sexe: { 
             type: String,
             required:true
          },
-         Classe: { 
+         classe: { 
             type: String,
             maxLength:10,
             required:true

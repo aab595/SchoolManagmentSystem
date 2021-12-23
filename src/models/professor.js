@@ -14,11 +14,11 @@ const professorSchema = new mongoose.Schema(
             maxLength:20,
           },
         
-        Speciality: { 
+        speciality: { 
             type: String,
             required:true
          },
-        Adress: {
+        adress: {
             type: String,
             
         }
