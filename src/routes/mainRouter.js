@@ -10,4 +10,11 @@ route.get('/mission', controller.mission)
 route.get('/contact', controller.contact)
 
 
+/**
+ * @description for authenticate
+ * @method GET /login
+ */
+route.get('/login', controller.login)
+
+
 module.exports = route

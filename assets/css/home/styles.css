@@ -35,6 +35,8 @@ body {
     text-align: center;
     font-weight: bold;
     margin-top: calc((80px - 16px)/2);
+    margin-left: 25px;
+    margin-right: 25px;
 }
 
 /* HEADER DESIGN */

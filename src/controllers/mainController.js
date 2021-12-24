@@ -16,3 +16,8 @@ exports.mission = (req, res) => {
 exports.contact = (req, res) => {
     res.render('pages/home/contact')
 }
+
+
+exports.login = (req, res) => {
+    res.render('pages/auth/login')
+}

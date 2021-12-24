@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    background-image: url("../../img/login-bg.jpg");
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    height: 400px;
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+}
+
+.avatar {
+    text-align: center;
+    margin-top: 25px;
+    border-radius: 50%;
+}
+
+.avatar img {
+    height: 100px;
+    width: 100px;
+}
+
+.form {
+    margin: 25px;
+    /* background-color: blue; */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    gap: 5px;
+    font-size: 1.1em;
+    font-weight: 600;
+    opacity: .9;
+}
+
+.form-control {
+    height: 35px;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.25);
+    border: 1px solid #2F80ED;
+    border-radius: 25px;
+    outline: none;
+    padding-left: 15px;
+    font-family: 'Nunito', sans-serif;
+    font-size: .85em;
+    font-weight: 500;
+}
+
+.form-control:hover {
+    border: 2px solid #2F80ED;
+}
+
+.form-control:focus {
+    border: 2px solid #2F80ED;
+}
+
+.btn {
+    height: 40px;
+    width: 110px;
+    border-radius: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Nunito', sans-serif;
+    font-size: .9em;
+    font-weight: 700;
+    outline: none;
+    border: 1px solid #2F80ED;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.btn-primary {
+    background-color: #2F80ED;
+    color: #fff;
+}
+
+.forgot-password {
+    color: #EB5757;
+    text-align: center;
+    margin-top: 5px;
+}
+
+@media screen and (max-width: 416px) {
+    .card {
+        width: auto;
+    }
+    .btn {
+        width: 100%;
+    }
+}
