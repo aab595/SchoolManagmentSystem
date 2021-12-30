@@ -1,23 +1,26 @@
-exports.home = (req, res) => {
+const home = (req, res) => {
     res.render('index')
 }
 
 
-exports.news = (req, res) => {
+const news = (req, res) => {
     res.render('pages/home/news')
 }
 
 
-exports.mission = (req, res) => {
+const mission = (req, res) => {
     res.render('pages/home/mission')
 }
 
 
-exports.contact = (req, res) => {
+const contact = (req, res) => {
     res.render('pages/home/contact')
 }
 
-
-exports.login = (req, res) => {
+const login = (req, res) => {
     res.render('pages/auth/login')
+}
+
+module.exports = {
+    home, news, mission, contact, login
 }

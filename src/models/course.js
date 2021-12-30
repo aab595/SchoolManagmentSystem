@@ -1,19 +1,11 @@
 const mongoose = require("mongoose");
 
-const courseSchema = new mongoose.Schema({
-  label: {
-    type: String,
-    required: true,
-    minLength: 2,
-    maxLength: 20
-  },
-  description: { 
-    type: String 
-  },
-  content: {
-    type: String,
-    required: true
-  }
+const CourseSchema = new mongoose.Schema({
+  label: String,
+  volume: Number,
+  teacher: mongoose.Types.ObjectId,
+  classe: mongoose.Types.ObjectId,
 });
 
-module.exports = mongoose.model("Course", courseSchema);
+const Course = mongoose.model("Course", courseSchema);
+module.exports = Course

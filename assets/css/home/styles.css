@@ -96,7 +96,8 @@ body {
 }
 
 .main {
-    margin: 30px;
+    margin-left: 60px;
+    margin-right: 60px;
 }
 
 .main h3 {
@@ -133,8 +134,7 @@ body {
 }
 
 .stats h3 {
-    text-decoration: underline 2px;
-    opacity: .7;
+    opacity: .8;
     margin: 0 25px;
 }
 
