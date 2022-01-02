@@ -1,14 +1,14 @@
 const express      = require('express');
 const route        = express.Router();
 const controller   = require('../controllers/userController');
-const authenticate = require('../middleware/Authentication')
 
 
-route.get('/', authenticate, controller.getAllUser);
-route.post('/create', controller.storeUser);
-route.post('/show/:id', controller.showUser);
-route.post('/:id/update', controller.updateUser);
-route.post('/:id/delete', controller.destroyUser);
+route.get('/', controller.dash);
+route.get('/users', controller.getAllUser);
+route.post('/users/create', controller.storeUser);
+route.post('/users/show/:id', controller.showUser);
+route.post('/users/:id/update', controller.updateUser);
+route.post('/users/:id/delete', controller.destroyUser);
 
 route.get('/students', controller.getAllStudent);
 route.post('/students/create', controller.storeStudent);
