@@ -1,23 +1,28 @@
-const bcrypt                            = require('bcryptjs')
+const bcrypt = require('bcryptjs')
 const { User, Student, Teacher, Staff } = require('../models/user');
 
 /**
  * User METHODS
  */
 
+// show dashboard
+exports.dash = async (req, res) => {
+    try {
+        const users = await User.find();
+        res.render("pages/users/dashboard", { users })
+    } catch (error) {
+        console.log('Une erreur s\'est produite');
+    }
+}
+
 // show the list of users
-exports.getAllUser = (req, res) => {
-    User.find()
-        .then(response => {
-            res.json({
-                response
-            })
-        })
-        .catch(error => {
-            res.json({
-                message: "Une erreur s'est produite"
-            })
-        })
+exports.getAllUser = async (req, res) => {
+    try {
+        const users = await User.find();
+        res.render("pages/users/user", { users })
+    } catch (error) {
+        console.log('Une erreur s\'est produite');
+    }
 }
 
 // show single user
@@ -45,13 +50,13 @@ exports.storeUser = (req, res, next) => {
             })
         }
         let user = new User({
-            name    : req.body.name,
-            email   : req.body.email,
+            name: req.body.name,
+            email: req.body.email,
             password: hashedPassword,
-            profil  : req.body.profil,
-            phone   : req.body.phone,
-            address : req.body.address,
-            gender  : req.body.gender
+            profil: req.body.profil,
+            phone: req.body.phone,
+            address: req.body.address,
+            gender: req.body.gender
         })
         user.save()
             .then(response => {
@@ -71,12 +76,12 @@ exports.storeUser = (req, res, next) => {
 exports.updateUser = (req, res) => {
     let userID = req.params.id
     let updatedData = {
-        name    : req.body.name,
-        email   : req.body.email,
-        profil  : req.body.profil,
-        phone   : req.body.phone,
-        address : req.body.address,
-        gender  : req.body.gender
+        name: req.body.name,
+        email: req.body.email,
+        profil: req.body.profil,
+        phone: req.body.phone,
+        address: req.body.address,
+        gender: req.body.gender
     }
     User.findByIdAndUpdate(userID, { $set: updatedData })
         .then(() => {
@@ -151,16 +156,16 @@ exports.storeStudent = (req, res) => {
             })
         }
         let student = new Student({
-            name       : req.body.name,
-            email      : req.body.email,
-            password   : hashedPassword,
-            profil     : req.body.profil,
-            phone      : req.body.phone,
-            address    : req.body.address,
-            gender     : req.body.gender,
+            name: req.body.name,
+            email: req.body.email,
+            password: hashedPassword,
+            profil: req.body.profil,
+            phone: req.body.phone,
+            address: req.body.address,
+            gender: req.body.gender,
             codeStudent: req.body.codeStudent,
-            birthDate  : req.body.birthDate,
-            classe     : req.body.classe
+            birthDate: req.body.birthDate,
+            classe: req.body.classe
         })
         student.save()
             .then(response => {
@@ -180,15 +185,15 @@ exports.storeStudent = (req, res) => {
 exports.updateStudent = (req, res) => {
     let studentID = req.params.id
     let updatedData = {
-        name       : req.body.name,
-        email      : req.body.email,
-        profil     : req.body.profil,
-        phone      : req.body.phone,
-        address    : req.body.address,
-        gender     : req.body.gender,
+        name: req.body.name,
+        email: req.body.email,
+        profil: req.body.profil,
+        phone: req.body.phone,
+        address: req.body.address,
+        gender: req.body.gender,
         codeStudent: req.body.codeStudent,
-        birthDate  : req.body.birthDate,
-        classe     : req.body.classe
+        birthDate: req.body.birthDate,
+        classe: req.body.classe
     }
     Student.findByIdAndUpdate(studentID, { $set: updatedData })
         .then(() => {
@@ -264,15 +269,15 @@ exports.storeTeacher = (req, res) => {
             })
         }
         let teacher = new Teacher({
-            name      : req.body.name,
-            email     : req.body.email,
-            password  : hashedPassword,
-            profil    : req.body.profil,
-            phone     : req.body.phone,
-            address   : req.body.address,
-            gender    : req.body.gender,
+            name: req.body.name,
+            email: req.body.email,
+            password: hashedPassword,
+            profil: req.body.profil,
+            phone: req.body.phone,
+            address: req.body.address,
+            gender: req.body.gender,
             speciality: req.body.speciality,
-            level     : req.body.level
+            level: req.body.level
         })
         teacher.save()
             .then(response => {
@@ -292,14 +297,14 @@ exports.storeTeacher = (req, res) => {
 exports.updateTeacher = (req, res) => {
     let teacherID = req.params.id
     let updatedData = {
-        name      : req.body.name,
-        email     : req.body.email,
-        profil    : req.body.profil,
-        phone     : req.body.phone,
-        address   : req.body.address,
-        gender    : req.body.gender,
+        name: req.body.name,
+        email: req.body.email,
+        profil: req.body.profil,
+        phone: req.body.phone,
+        address: req.body.address,
+        gender: req.body.gender,
         speciality: req.body.speciality,
-        level     : req.body.level
+        level: req.body.level
     }
     Teacher.findByIdAndUpdate(teacherID, { $set: updatedData })
         .then(() => {
@@ -375,14 +380,14 @@ exports.storeStaff = (req, res) => {
             })
         }
         let staff = new Staff({
-            name    : req.body.name,
-            email   : req.body.email,
+            name: req.body.name,
+            email: req.body.email,
             password: hashedPassword,
-            profil  : req.body.profil,
-            phone   : req.body.phone,
-            address : req.body.address,
-            gender  : req.body.gender,
-            status  : req.body.status
+            profil: req.body.profil,
+            phone: req.body.phone,
+            address: req.body.address,
+            gender: req.body.gender,
+            status: req.body.status
         })
         staff.save()
             .then(response => {
@@ -402,13 +407,13 @@ exports.storeStaff = (req, res) => {
 exports.updateStaff = (req, res) => {
     let staffID = req.params.id
     let updatedData = {
-        name    : req.body.name,
-        email   : req.body.email,
-        profil  : req.body.profil,
-        phone   : req.body.phone,
-        address : req.body.address,
-        gender  : req.body.gender,
-        status  : req.body.status
+        name: req.body.name,
+        email: req.body.email,
+        profil: req.body.profil,
+        phone: req.body.phone,
+        address: req.body.address,
+        gender: req.body.gender,
+        status: req.body.status
     }
     Staff.findByIdAndUpdate(staffID, { $set: updatedData })
         .then(() => {

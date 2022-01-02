@@ -1,0 +1,122 @@
+<footer>
+  <p>&copy; 2022 School Name | Réalisée par <strong>AAB</strong></p>
+</footer>
+<script src="/js/main/scripts.js"></script>
+<script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script>
+  const ctx = document.getElementById('myChart').getContext('2d');
+  const myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: [
+        'Garçons',
+        'Filles'
+      ],
+      datasets: [{
+        label: 'My First Dataset',
+        data: [154, 111],
+        backgroundColor: [
+          'rgb(54, 162, 235)',
+          'rgb(255, 205, 86)'
+        ],
+      }]
+    }
+  });
+  // GRAPHIQUE 1
+  new Chart("myChart1", {
+    type: "bar",
+    data: {
+      labels: ['6e', '5e', '4e', '3e'],
+      datasets: [{
+        label: 'Nombre d\'élèves',
+        data: [55, 68, 95, 100],
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 206, 86)',
+          'rgb(75, 192, 192)'
+        ],
+        // borderWidth: 5
+      }]
+    },
+    options: {
+      legend: { display: false },
+      scales: {
+        yAxes: [{ ticks: { min: 0, max: 200 } }],
+      }
+    }
+  });
+  // GRAPHIQUE 2
+  var xValues2 = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
+  var yValues2 = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
+
+  new Chart("myChart2", {
+    type: "line",
+    data: {
+      labels: xValues2,
+      datasets: [{
+        fill: false,
+        lineTension: 0,
+        backgroundColor: "rgba(0,0,255,1.0)",
+        borderColor: "rgba(0,0,255,0.1)",
+        data: yValues2
+      }]
+    },
+    options: {
+      legend: { display: false },
+      scales: {
+        yAxes: [{ ticks: { min: 6, max: 16 } }],
+      }
+    }
+  });
+  // GRAPHIQUE 3
+  var xValues3 = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
+  var yValues3 = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
+
+  new Chart("myChart3", {
+    type: "line",
+    data: {
+      labels: xValues3,
+      datasets: [{
+        fill: false,
+        lineTension: 0,
+        backgroundColor: "rgba(0,0,255,1.0)",
+        borderColor: "rgba(0,0,255,0.1)",
+        data: yValues3
+      }]
+    },
+    options: {
+      legend: { display: false },
+      scales: {
+        yAxes: [{ ticks: { min: 6, max: 16 } }],
+      }
+    }
+  });
+  // GRAPHIQUE 4
+  var xValues4 = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
+  var yValues4 = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
+
+  new Chart("myChart4", {
+    type: "line",
+    data: {
+      labels: xValues4,
+      datasets: [{
+        fill: false,
+        lineTension: 0,
+        backgroundColor: "rgba(0,0,255,1.0)",
+        borderColor: "rgba(0,0,255,0.1)",
+        data: yValues4
+      }]
+    },
+    options: {
+      legend: { display: false },
+      scales: {
+        yAxes: [{ ticks: { min: 6, max: 16 } }],
+      }
+    }
+  });
+</script>
+</body>
+
+</html>
