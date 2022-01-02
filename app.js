@@ -5,7 +5,13 @@ const connectDB    = require('./src/database/connection');
 const mainRouter   = require('./src/routes/mainRouter');
 const userRouter   = require('./src/routes/userRoute');
 const authRouter   = require('./src/routes/authRouter');
-const authenticate = require('./src/middleware/Authenticate')
+const classeRouter = require('./src/routes/classeRoute');
+const classroomRouter = require('./src/routes/classroomRoute');
+const courseRouter = require('./src/routes/courseRoute');
+const gradeRouter = require('./src/routes/gradeRoute');
+const subjectRouter = require('./src/routes/subjectRoute');
+const timeTablesRouter = require('./src/routes/timeTablesRoute');
+const authenticate = require('./src/middleware/Authenticate');
 const PORT         = process.env.PORT || 3000;
 const HOST         = process.env.HOST;
 
@@ -23,6 +29,12 @@ app.use(express.static('public'));
 app.use('/', mainRouter);
 app.use('/admin', userRouter);
 app.use('/auth', authRouter);
+app.use('/classes', classeRouter); 
+app.use('/classroom', classroomRouter); 
+app.use('/course', courseRouter); 
+app.use('/grade', gradeRouter);
+app.use('/subject', subjectRouter);
+app.use('/timeTables', timeTablesRouter);
 // Database connection
 connectDB();
 // Start server
