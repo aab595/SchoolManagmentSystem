@@ -117,19 +117,14 @@ exports.destroyUser = (req, res) => {
  */
 
 // show the list of students
-exports.getAllStudent = (req, res) => {
-    Student.find()
-        .then(response => {
-            res.json({
-                response
-            })
-        })
-        .catch(error => {
-            res.json({
-                message: "Une erreur s'est produite"
-            })
-        })
-};
+exports.getAllStudent = async (req, res) => {
+    try {
+        const students = await Student.find();
+        res.render("pages/students/index", { students })
+    } catch (error) {
+        console.log('Une erreur s\'est produite');
+    }
+}
 
 // show single student
 exports.showStudent = (req, res) => {
@@ -230,18 +225,13 @@ exports.destroyStudent = (req, res) => {
  */
 
 // show the list of teachers
-exports.getAllTeacher = (req, res) => {
-    Teacher.find()
-        .then(response => {
-            res.json({
-                response
-            })
-        })
-        .catch(error => {
-            res.json({
-                message: "Une erreur s'est produite"
-            })
-        })
+exports.getAllTeacher = async (req, res) => {
+    try {
+        const teachers = await Teacher.find();
+        res.render("pages/teachers/index", { teachers })
+    } catch (error) {
+        console.log('Une erreur s\'est produite');
+    }
 }
 
 // show single teacher

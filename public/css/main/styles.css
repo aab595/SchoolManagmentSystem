@@ -372,35 +372,6 @@ body {
     height: 35px;
     width: 100%;
 }
-table {
-    table-layout: auto;
-    border: 1px solid #ccc;
-    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
-    border-radius: 5px;
-    font-size: 12px;
-    font-weight: normal;
-    border: none;
-    border-collapse: collapse;
-    width: 100%;
-    max-width: 100%;
-    white-space: nowrap;
-    background-color: white;
-}
-table td, table th {
-    text-align: center;
-    padding: 8px;
-}
-table td {
-    border-right: 1px solid #f8f8f8;
-    font-size: 12px;
-}
-table thead th {
-    color: #ffffff;
-    background: var(--dark_blue);
-}
-table tr:nth-child(even) {
-    background: #F8F8F8;
-}
 footer {
     position: absolute;
     bottom: 0;

@@ -91,7 +91,6 @@ body {
 }
 
 .header-banner img {
-    height: 600px;
     width: 100%;
 }
 
@@ -212,11 +211,4 @@ body {
     .stats-values {
         flex-direction: column;
     }
-    .header-banner img {
-        height: 400px;
-    }
-}
-
-@media screen and (max-width: 794px) {
-    /* CHANGE NAVBAR POSITION */
 }

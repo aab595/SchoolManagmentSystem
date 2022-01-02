@@ -21,7 +21,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 // Load routers
 app.use('/', mainRouter);
-app.use('/admin', authenticate, userRouter);
+app.use('/admin', userRouter);
 app.use('/auth', authRouter);
 // Database connection
 connectDB();
