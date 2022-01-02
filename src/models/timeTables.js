@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const TimeTableSchema = new Schema({
+const TimeTableSchema = new mongoose.Schema({
     subject: { type: String },
     startTime: { type: Date },
     endTime: { type: Date },

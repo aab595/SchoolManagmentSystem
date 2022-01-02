@@ -7,5 +7,5 @@ const CourseSchema = new mongoose.Schema({
   classe: mongoose.Types.ObjectId,
 });
 
-const Course = mongoose.model("Course", courseSchema);
+const Course = mongoose.model("Course", CourseSchema);
 module.exports = Course
