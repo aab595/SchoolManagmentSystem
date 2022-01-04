@@ -1,8 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-    --dark_blue: #3A405A;
-    --bg_color: #ecf0f3;
+    --dark-blue: #3A405A;
+    --bg-color: #ecf0f3;
+}
+::-webkit-scrollbar {									/* Scrollbars */
+	width: .875em;
+	height: .875em;
+	background: #fff;
+}
+::-webkit-scrollbar-track-piece {						/* Fond */
+	background: transparent none;
+	border: solid .25em transparent;
+	border-right-width: .5em;
+	margin: .25em;
+	-webkit-box-shadow: inset .0625em .0625em 0 0 #000, inset -.0625em -.0625em 0 0 #000;
+}
+::-webkit-scrollbar-thumb {								/* Barre */
+	border: solid 0 transparent;
+	border-right-width: .2em;
+	-webkit-border-radius: .3125em;
+	-webkit-border-top-right-radius: .5625em .3125em;
+	-webkit-border-bottom-right-radius: .5625em .3125em;
+	-webkit-box-shadow: inset 0 0 0 .0625em var(--dark-blue), inset 0 0 0 .375em var(--dark-blue);
+}
+::-webkit-scrollbar-thumb:hover {						/* Barre */
+	-webkit-box-shadow: inset 0 0 0 .0625em #fff, inset 0 0 0 .375em var(--dark-blue);
+}
+::-webkit-scrollbar-thumb:horizontal {					/* Barre du bas */
+	border-right-width: 0;
+	border-bottom-width: .25em;
+	-webkit-border-top-right-radius: .3125em;
+	-webkit-border-bottom-right-radius: .3125em .5625em;
+	-webkit-border-bottom-left-radius: .3125em .5625em;
+}
+::-webkit-scrollbar-button {							/* Boutons */
+	height: 45px;
+	background: var(--dark-blue);
+	-webkit-background-size: 1.75em .5em, auto;
 }
 * {
     margin: 0;
@@ -12,7 +47,7 @@
 }
 body {
     font-size: 16px;
-    background-color: var(--bg_color);
+    background-color: var(--bg-color);
     position: relative;
     min-height: 100vh;
     width: 100%;
@@ -24,7 +59,7 @@ body {
     left: 0;
     height: calc(100% - 49px);
     width: 78px;
-    background: var(--dark_blue);
+    background: var(--dark-blue);
     padding: 6px 14px;
     transition: all 0.5s ease;
     z-index: 50;
@@ -143,7 +178,7 @@ body {
     white-space: nowrap;
 }
 .sidebar ul li a:hover {
-    color: var(--dark_blue);
+    color: var(--dark-blue);
     background: #fff;
 }
 .sidebar ul li i {
@@ -377,7 +412,7 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
-    background: var(--dark_blue);
+    background: var(--dark-blue);
     z-index: 30;
     text-align: center;
 }
@@ -393,6 +428,32 @@ footer p {
     .main-content .content .card-2,
     .main-content .content .card-3,
     .main-content .content .card-4 {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 1034px) {
+    .main-content .stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 25px;
+    }
+    .main-content .stats .stat-1,
+    .main-content .stats .stat-2,
+    .main-content .stats .stat-3,
+    .main-content .stats .stat-4 {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 640px) {
+    .main-content .stats {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 15px;
+    }
+    .main-content .stats .stat-1,
+    .main-content .stats .stat-2,
+    .main-content .stats .stat-3,
+    .main-content .stats .stat-4 {
         width: 100%;
     }
 }
