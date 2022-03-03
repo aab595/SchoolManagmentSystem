@@ -1,8 +1,8 @@
 {
   "name": "schoolmanagmentsystem",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Projet intermédiaire à l'issu du bootcamp MEAN Stack. Application fullstack réaliser avec Express et Mongoose",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js"

@@ -19,15 +19,15 @@ exports.login = (req, res, next) => {
                     if (result) {
                         let token = jwt.sign({ name: user.name }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: process.env.ACCESS_TOKEN_EXPIRE_TIME });
                         let refreshToken = jwt.sign({ name: user.name }, process.env.REFRESH_TOKEN_SECRET, { expiresIn: process.env.REFRESH_TOKEN_EXPIRE_TIME });
-                        // res.json({
-                        //     message: "Connexion réussie",
-                        //     token,
-                        //     refreshToken
-                        // })
+                        res.json({
+                            message: "Connexion réussie",
+                            token,
+                            refreshToken
+                        })
                         res.cookie('token', token, { 
                             httpOnly: true
                         });
-                        return res.redirect('/admin');
+                        // return res.redirect('/admin');
                     } else {
                         res.redirect('/login');
                     }
