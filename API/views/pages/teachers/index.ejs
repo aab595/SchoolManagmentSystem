@@ -1,0 +1,38 @@
+<%- include('../partials/_header') %>
+
+<%- include('../partials/_sidebar') %>
+    <div class="main-content">
+        <div class="head">
+            <h2>Enseignants</h2>
+            <button type="submit" title="Ajouter un utilisateur">
+                <i class="material-icons">add</i> Ajouter
+            </button>
+        </div>
+        <table>
+            <thead>
+                <th>Name</th>
+                <th>Téléphone</th>
+                <th>Adresse</th>
+                <th>Spécialité</th>
+                <th>Genre</th>
+                <th>Actions</th>
+            </thead>
+            <tbody>
+                <% teachers.forEach(teacher => { %>
+                    <tr>
+                        <td><%= teacher.name %> </td>
+                        <td><%= teacher.phone %> </td>
+                        <td><%= teacher.address %> </td>
+                        <td><%= teacher.speciality %> </td>
+                        <td><%= teacher.gender %> </td>
+                        <td>
+                            <button title="Modifier" class="btn-warning"><i class="material-icons">edit</i></button>
+                            <button title="Supprimer" class="btn-danger"><i class="material-icons">delete</i></button>
+                        </td>
+                    </tr>
+                <% }) %> 
+            </tbody>
+        </table>
+        <div></div>
+    </div>
+<%- include('../partials/_footer') %>

@@ -1,0 +1,42 @@
+<%- include('../partials/_header') %>
+
+<%- include('../partials/_sidebar') %>
+    <div class="main-content">
+        <div class="head">
+            <h2>Élèves</h2>
+            <button type="submit" title="Ajouter un utilisateur">
+                <i class="material-icons">add</i> Ajouter
+            </button>
+        </div>
+        <table>
+            <thead>
+                <th>Code</th>
+                <th>Nom complet</th>
+                <th>Classe</th>
+                <th>Téléphone</th>
+                <th>Adresse</th>
+                <th>Date de naissance</th>
+                <th>Genre</th>
+                <th>Actions</th>
+            </thead>
+            <tbody>
+                <% students.forEach(student => { %>
+                    <tr>
+                        <td><%= student.codeStudent %> </td>
+                        <td><%= student.name %> </td>
+                        <td><%= student.classe.label %> </td>
+                        <td><%= student.phone %> </td>
+                        <td><%= student.address %> </td>
+                        <td><%= student.birthDate %> </td>
+                        <td><%= student.gender %> </td>
+                        <td>
+                            <button title="Modifier" class="btn-warning"><i class="material-icons">edit</i></button>
+                            <button title="Supprimer" class="btn-danger"><i class="material-icons">delete</i></button>
+                        </td>
+                    </tr>
+                <% }) %> 
+            </tbody>
+        </table>
+        <div></div>
+    </div>
+<%- include('../partials/_footer') %>
