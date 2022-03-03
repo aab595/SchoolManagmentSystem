@@ -1,0 +1,36 @@
+{
+  "name": "schoolmanagmentsystem",
+  "version": "1.0.1",
+  "description": "Projet intermédiaire à l'issu du bootcamp MEAN Stack. Application fullstack réaliser avec Express et Mongoose",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aab595/SchoolManagmentSystem.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aab595/SchoolManagmentSystem/issues"
+  },
+  "homepage": "https://github.com/aab595/SchoolManagmentSystem#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.1.3",
+    "mongoose-extend-schema": "^1.0.0",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0"
+  }
+}
